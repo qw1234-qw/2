@@ -34,7 +34,7 @@ function navigateToPage(buttonNumber) {
             url = "https://v6v3265.xyz/";
             break;
         default:
-            url = "indeed.html";
+            url = "https://qw1234-qw.github.io/3/index.html";
     }
 
     showAlert('加载中...');
