@@ -46,13 +46,7 @@ function navigateToPage(buttonNumber) {
         .then(response => {
             if (response.ok) {
                 window.location.href = url; // 导航到指定页面
-            } else {
-                throw new Error('网络错误');
-            }
-        })
-        .catch(error => {
-            const alertBox = document.getElementById('floatingAlert');
-            showAlert("网页跳转失败"); // 显示跳转失败提示
+             }
             
             // 检查提示框是否仍然可见
             setTimeout(() => {
