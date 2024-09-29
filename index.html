@@ -1,111 +1,83 @@
+<!DOCTYPE html>
 <html lang="zh">
- <head> 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>黄站总集</title> 
-  <link rel="stylesheet" href="styles.css"> 
-  <script src="js/jq.js"></script> 
-  <style>
-   .floating-alert {
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(250, 0, 0, 1.0);
-  color: white;
-  padding: 10px;
-  border-radius: 10px;
-  display: none; /* 默认隐藏 */
-  z-index: 1000; /* 确保浮动警告在其他元素之上 */
-}
-
-/* 加载页面样式 */
-#loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw; /* 使用视口宽度 */
-  height: 100vh; /* 使用视口高度 */
-  background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* 确保加载屏幕在其他元素之上 */
-}
-
-#loading img {
-  max-width: 100%; /* 确保图像不会超过容器宽度 */
-  max-height: 100%; /* 确保图像不会超过容器高度 */
-  height: 100%; /* 自适应高度 */
-}
-  </style> 
- </head> 
- <body id="v1"> 
-  <div id="loading" style="display: none;"> 
-   <img id="v45" src="geothermal.png" alt="loading"> 
-  </div> 
-  <div id="v2" class="container"> 
-   <div id="v3" class="row"> 
-    <button id="v4" onclick="navigateToPage(1)">抖阴视频 </button> 
-    <button id="v5" onclick="navigateToPage(2)">草榴AV </button> 
-    <button id="v6" onclick="navigateToPage(3)">YOUAV8</button> 
-   </div> 
-   <div id="v7" class="row"> 
-    <button id="v8" onclick="navigateToPage(4)">17c</button> 
-    <button id="v9" onclick="navigateToPage(5)">xFuns</button> 
-    <button id="v10" onclick="navigateToPage(6)">V66AV</button> 
-   </div> 
-   <div id="v11" class="row"> 
-    <button id="v12" onclick="navigateToPage(7)">按钮 7</button> 
-    <button id="v13" onclick="navigateToPage(8)">按钮 8</button> 
-    <button id="v14" onclick="navigateToPage(9)">按钮 9</button> 
-   </div> 
-   <div id="v15" class="row"> 
-    <button id="v16" onclick="navigateToPage(10)">按钮 10</button> 
-    <button id="v17" onclick="navigateToPage(11)">按钮 11</button> 
-    <button id="v18" onclick="navigateToPage(12)">按钮 12</button> 
-   </div> 
-   <div id="v19" class="row"> 
-    <button id="v20" onclick="navigateToPage(13)">按钮 13</button> 
-    <button id="v21" onclick="navigateToPage(14)">按钮 14</button> 
-    <button id="v22" onclick="navigateToPage(15)">按钮 15</button> 
-   </div> 
-   <div id="v23" class="row"> 
-    <button id="v24" onclick="navigateToPage(16)">按钮 16</button> 
-    <button id="v25" onclick="navigateToPage(17)">按钮 17</button> 
-    <button id="v26" onclick="navigateToPage(18)">按钮 18</button> 
-   </div> 
-   <div id="v27" class="row"> 
-    <button id="v28" onclick="navigateToPage(19)">按钮 19</button> 
-    <button id="v29" onclick="navigateToPage(20)">按钮 20</button> 
-    <button id="v30" onclick="navigateToPage(21)">按钮 21</button> 
-   </div> 
-   <div id="v31" class="row"> 
-    <button id="v32" onclick="navigateToPage(22)">按钮 22</button> 
-    <button id="v33" onclick="navigateToPage(23)">按钮 23</button> 
-    <button id="v34" onclick="navigateToPage(24)">按钮 24</button> 
-   </div> 
-   <div id="v35" class="row"> 
-    <button id="v36" onclick="navigateToPage(25)">按钮 25</button> 
-    <button id="v37" onclick="navigateToPage(26)">按钮 26</button> 
-    <button id="v38" onclick="navigateToPage(27)">按钮 27</button> 
-   </div> 
-   <div id="v39" class="row"> 
-    <button id="v40" onclick="navigateToPage(28)">按钮 28</button> 
-    <button id="v41" onclick="navigateToPage(29)">按钮 29</button> 
-    <button id="v42" onclick="navigateToPage(30)">按钮 30</button> 
-   </div> 
-   <div id="floatingAlert" class="floating-alert">
-     XX制作，仅用于合法用途，一切非法使用概不负责 
-   </div> 
-  </div> 
-  <script src="script.js"></script> 
-
-  <div id="floatingAlert" class="floating-alert">
-    XX制作，仅用于合法用途，一切非法使用概不负责 
-  </div> 
-  <script src="script.js"></script> 
-  <table id="v44"> 
-  </table>  
- </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黄站总集</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/jq.js"></script>
+    <style>
+        .floating-alert {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(250, 0, 0, 1.0);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex; /* 使用 flexbox */
+            justify-content: center; /* 水平居中对齐 */
+            z-index: 1000; /* 确保浮动警告在其他元素之上 */
+        }
+    </style>
+</head>
+<body id="v1">
+    <div id="v2" class="container">
+        <div id="v3" class="row">
+            <button id="v4" onclick="navigateToPage(1)">抖阴视频</button>
+            <button id="v5" onclick="navigateToPage(2)">草榴AV</button>
+            <button id="v6" onclick="navigateToPage(3)">YOUAV8</button>
+        </div>
+        <div id="v7" class="row">
+            <button id="v8" onclick="navigateToPage(4)">17c</button>
+            <button id="v9" onclick="navigateToPage(5)">xFuns</button>
+            <button id="v10" onclick="navigateToPage(6)">V66AV</button>
+        </div>
+        <div id="v11" class="row">
+            <button id="v12" onclick="navigateToPage(7)">按钮 7</button>
+            <button id="v13" onclick="navigateToPage(8)">按钮 8</button>
+            <button id="v14" onclick="navigateToPage(9)">按钮 9</button>
+        </div>
+        <div id="v15" class="row">
+            <button id="v16" onclick="navigateToPage(10)">按钮 10</button>
+            <button id="v17" onclick="navigateToPage(11)">按钮 11</button>
+            <button id="v18" onclick="navigateToPage(12)">按钮 12</button>
+        </div>
+        <div id="v19" class="row">
+            <button id="v20" onclick="navigateToPage(13)">按钮 13</button>
+            <button id="v21" onclick="navigateToPage(14)">按钮 14</button>
+            <button id="v22" onclick="navigateToPage(15)">按钮 15</button>
+        </div>
+        <div id="v23" class="row">
+            <button id="v24" onclick="navigateToPage(16)">按钮 16</button>
+            <button id="v25" onclick="navigateToPage(17)">按钮 17</button>
+            <button id="v26" onclick="navigateToPage(18)">按钮 18</button>
+        </div>
+        <div id="v27" class="row">
+            <button id="v28" onclick="navigateToPage(19)">按钮 19</button>
+            <button id="v29" onclick="navigateToPage(20)">按钮 20</button>
+            <button id="v30" onclick="navigateToPage(21)">按钮 21</button>
+        </div>
+        <div id="v31" class="row">
+            <button id="v32" onclick="navigateToPage(22)">按钮 22</button>
+            <button id="v33" onclick="navigateToPage(23)">按钮 23</button>
+            <button id="v34" onclick="navigateToPage(24)">按钮 24</button>
+        </div>
+        <div id="v35" class="row">
+            <button id="v36" onclick="navigateToPage(25)">按钮 25</button>
+            <button id="v37" onclick="navigateToPage(26)">按钮 26</button>
+            <button id="v38" onclick="navigateToPage(27)">按钮 27</button>
+        </div>
+        <div id="v39" class="row">
+            <button id="v40" onclick="navigateToPage(28)">按钮 28</button>
+            <button id="v41" onclick="navigateToPage(29)">按钮 29</button>
+            <button id="v42" onclick="navigateToPage(30)">按钮 30</button>
+        </div>
+        <div id="floatingAlert" class="floating-alert">
+            XX制作，仅用于合法用途，一切非法使用概不负责
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
