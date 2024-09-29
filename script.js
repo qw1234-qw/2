@@ -10,7 +10,7 @@ function showAlert(message) {
 
 // 页面加载时的逻辑
 window.onload = function() {
-    showAlert("XX制作，仅用于合法用途，一切非法使用概不负责"); // 显示制作提示
+    showAlert("页面加载成功"); // 显示加载成功提示
 };
 
 // 导航到对应页面
@@ -41,6 +41,17 @@ function navigateToPage(buttonNumber) {
             url = "index.html"; // 默认页面URL
     }
 
-    // 直接导航到指定页面
-    window.location.href = url; // 导航到指定页面
+    // 使用 Fetch 请求确保页面加载成功
+    fetch(url)
+        .then(response => {
+            if (response.ok) {
+                window.location.href = url; // 导航到指定页面
+            } else {
+                throw new Error('网络错误');
+            }
+        })
+        .catch(error => {
+            showAlert("加载失败，返回首页");
+            window.location.href = "index.html"; // 加载失败返回首页
+        });
 }
