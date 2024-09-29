@@ -22,16 +22,6 @@ function navigateToPage(buttonNumber) {
     // 获取对应的URL，默认使用首页
     const url = urls[buttonNumber] || "index.html";
 
-    // 使用 Fetch 请求确保页面加载成功
-    fetch(url)
-        .then(response => {
-            if (response.ok) {
-                window.location.href = url; // 导航到指定页面
-            } else {
-                throw new Error('网络错误');
-            }
-        })
-        .catch(() => {
-            showAlert("加载失败"); // 仅显示失败提示
-        });
+    // 直接导航到指定页面
+    window.location.href = url; 
 }
