@@ -46,17 +46,12 @@ function navigateToPage(buttonNumber) {
         .then(response => {
             if (response.ok) {
                 window.location.href = url; // 导航到指定页面
-             }
-            
-            // 检查提示框是否仍然可见
-            setTimeout(() => {
-                if (alertBox.style.display === 'block') {
-                    showAlert("加载失败，请检查网络或使用流量"); // 显示网络问题提示
-                }
-            }, 3000); // 延迟3秒检查
-
-            setTimeout(() => {
-                window.location.href = "index.html"; // 加载失败返回首页
-            }, 9000); // 9秒后跳转
+            } else {
+                throw new Error('网络错误');
+            }
+        })
+        .catch(error => {
+            // 这里去掉了加载失败的处理逻辑
+            console.error("加载失败:", error); // 可选：在控制台输出错误信息
         });
 }
