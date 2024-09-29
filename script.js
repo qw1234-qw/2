@@ -54,6 +54,6 @@ function navigateToPage(buttonNumber) {
             showAlert("网页跳转失败"); // 显示跳转失败提示
             setTimeout(() => {
                 window.location.href = "index.html"; // 加载失败返回首页
-            }, 3000); // 3秒后跳转
+            }, 9000); // 3秒后跳转
         });
 }
