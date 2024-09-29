@@ -1,16 +1,16 @@
 // 显示提示框
-function showAlert(message) {
+function floatingAlert(message) {
     const alertBox = document.getElementById('floatingAlert');
-    alertBox.textContent = message; // 设置提示信息
+    alertBox.innerText = message; // 设置提示信息
     alertBox.style.display = 'block'; // 显示提示框
     setTimeout(() => {
         alertBox.style.display = 'none'; // 3秒后隐藏提示框
     }, 3000);
 }
 
-// 页面加载时的逻辑
+// 页面加载时显示提示信息
 window.onload = function() {
-    showAlert("页面加载成功"); // 显示加载成功提示
+    floatingAlert('XX制作，仅用于合法用途，一切非法使用概不负责'); // 显示加载提示
 };
 
 // 导航到对应页面
@@ -41,17 +41,6 @@ function navigateToPage(buttonNumber) {
             url = "index.html"; // 默认页面URL
     }
 
-    // 使用 Fetch 请求确保页面加载成功
-    fetch(url)
-        .then(response => {
-            if (response.ok) {
-                window.location.href = url; // 导航到指定页面
-            } else {
-                throw new Error('网络错误');
-            }
-        })
-        .catch(error => {
-            showAlert("加载失败，返回首页");
-            window.location.href = "index.html"; // 加载失败返回首页
-        });
+    floatingAlert('加载中...'); // 显示加载提示
+    window.location.href = url; // 导航到指定页面
 }
