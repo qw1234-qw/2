@@ -51,9 +51,18 @@ function navigateToPage(buttonNumber) {
             }
         })
         .catch(error => {
+            const alertBox = document.getElementById('floatingAlert');
             showAlert("网页跳转失败"); // 显示跳转失败提示
+            
+            // 检查提示框是否仍然可见
+            setTimeout(() => {
+                if (alertBox.style.display === 'block') {
+                    showAlert("加载失败，请检查网络或使用流量"); // 显示网络问题提示
+                }
+            }, 3000); // 延迟3秒检查
+
             setTimeout(() => {
                 window.location.href = "index.html"; // 加载失败返回首页
-            }, 9000); // 3秒后跳转
+            }, 9000); // 9秒后跳转
         });
 }
