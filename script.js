@@ -1,46 +1,37 @@
 // 显示提示框
-function floatingAlert(message) {
-    const alertBox = document.getElementById('floatingAlert');
-    alertBox.innerText = message; // 设置提示信息
-    alertBox.style.display = 'block'; // 显示提示框
-    setTimeout(() => {
-        alertBox.style.display = 'none'; // 3秒后隐藏提示框
-    }, 3000);
+function showAlert(message) {
+    alert(message);
 }
 
-// 页面加载时显示提示信息
+// 页面加载时的逻辑
 window.onload = function() {
-    floatingAlert('XX制作，仅用于合法用途，一切非法使用概不负责'); // 显示加载提示
+    showAlert("页面加载成功");
 };
 
 // 导航到对应页面
 function navigateToPage(buttonNumber) {
-    let url;
+    const urls = {
+        1: "https://dyfllnqeesez.xyz/vod/list.html?type_id=1043",
+        2: "http://www.yxxrd.cn/go_20240822/69613699",
+        3: "http://xzzljsb.com/",
+        4: "https://www.17cmm.top:8888/",
+        5: "https://xfuns.pro/",
+        6: "https://v6v3265.xyz/"
+    };
 
-    // 根据按钮号设置子页面的URL
-    switch (buttonNumber) {
-        case 1:
-            url = "https://dyfllnqeesez.xyz/vod/list.html?type_id=1043";
-            break;
-        case 2:
-            url = "http://www.yxxrd.cn/go_20240822/69613699";
-            break; 
-        case 3:
-            url = "http://xzzljsb.com/";
-            break;
-        case 4:
-            url = "https://www.17cmm.top:8888/";
-            break;
-        case 5:
-            url = "https://xfuns.pro/";
-            break;
-        case 6:
-            url = "https://v6v3265.xyz/";
-            break;
-        default:
-            url = "indeed.html"; // 默认页面URL
-    }
+    // 获取对应的URL，默认使用首页
+    const url = urls[buttonNumber] || "index.html";
 
-    floatingAlert('加载中...'); // 显示加载提示
-    window.location.href = url; // 导航到指定页面
+    // 使用 Fetch 请求确保页面加载成功
+    fetch(url)
+        .then(response => {
+            if (response.ok) {
+                window.location.href = url; // 导航到指定页面
+            } else {
+                throw new Error('网络错误');
+            }
+        })
+        .catch(() => {
+            showAlert("加载失败"); // 仅显示失败提示
+        });
 }
