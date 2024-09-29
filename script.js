@@ -38,9 +38,9 @@ function navigateToPage(buttonNumber) {
             url = "https://v6v3265.xyz/";
             break;
         default:
-            url = "indeed.html"; // 默认页面URL
+            url = "index.html"; // 默认页面URL
     }
 
-    // 直接导航到指定页面，不进行Fetch请求
+    // 直接导航到指定页面
     window.location.href = url; // 导航到指定页面
 }
