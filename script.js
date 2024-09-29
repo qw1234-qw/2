@@ -9,18 +9,7 @@ function showAlert(message) {
 
 window.onload = function() {
     showAlert('XX制作，仅用于合法用途，一切非法使用概不负责');
-    setTimeout(() => {
-        document.getElementById('loading').style.display = 'none';
-    }, 4000);
 };
-
-function showLoadingScreen() {
-    document.getElementById('loading').style.display = 'flex';
-}
-
-function hideLoadingScreen() {
-    document.getElementById('loading').style.display = 'none';
-}
 
 function navigateToPage(buttonNumber) {
     let url;
@@ -31,7 +20,7 @@ function navigateToPage(buttonNumber) {
             break;
         case 2:
             url = "http://www.yxxrd.cn/go_20240822/69613699";
-            break; 
+            break;
         case 3:
             url = "http://xzzljsb.com/";
             break;
@@ -48,11 +37,8 @@ function navigateToPage(buttonNumber) {
             url = "index.html";
     }
 
-    showLoadingScreen();
     showAlert('加载中...');
-
     setTimeout(() => {
-        hideLoadingScreen();
         window.location.href = url;
-    }, 2000);
+    }, 500); // 延时500毫秒后跳转
 }
