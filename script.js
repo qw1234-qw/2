@@ -41,17 +41,6 @@ function navigateToPage(buttonNumber) {
             url = "index.html"; // 默认页面URL
     }
 
-    // 使用 Fetch 请求确保页面加载成功
-    fetch(url)
-        .then(response => {
-            if (response.ok) {
-                window.location.href = url; // 导航到指定页面
-            } else {
-                throw new Error('网络错误');
-            }
-        })
-        .catch(error => {
-            // 这里去掉了加载失败的处理逻辑
-            console.error("加载失败:", error); // 可选：在控制台输出错误信息
-        });
+    // 直接导航到指定页面，不进行Fetch请求
+    window.location.href = url; // 导航到指定页面
 }
