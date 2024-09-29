@@ -6,29 +6,7 @@ function floatingAlert() {
       }, 3000);
     }
 
-    // 页面加载时显示加载图像
-    window.onload = function() {
-      showAlert();
-      const loadingScreen = document.getElementById('loading');
-      setTimeout(() => {
-        loadingScreen.style.display = 'none'; // 3秒后隐藏加载图像
-      }, 4000);
-    };
-// 显示软件加载屏幕
-function showLoadingScreen() {
-    const loadingScreen = document.getElementById('loading'); // 获取加载屏幕元素
-    loadingScreen.style.display = 'block'; // 显示加载屏幕
-}
-
-// 隐藏软件加载屏幕
-function hideLoadingScreen() {
-    const loadingScreen = document.getElementById('loading'); // 获取加载屏幕元素
-    loadingScreen.style.display = 'none'; // 隐藏加载屏幕
-}
- 
-   hideLoadingScreen()
-
-
+   
 
 // 导航到对应页面
 function navigateToPage(buttonNumber) {
@@ -59,14 +37,12 @@ function navigateToPage(buttonNumber) {
             url = "indeed.html"; // 默认页面URL
     }
     floatingAlert('加载中...');
-    showLoadingScreen(); // 显示加载中
     window.location.href = url;
     
 
     // 在这里隐藏加载屏幕，延迟4秒后导航
-    setTimeout(() => {
-        hideLoadingScreen(); // 隐藏加载屏幕
+    setTimeout(() => { // 隐藏加载屏幕
          // 导航到指定页面
-    }, 99999999000); 
+    }, 0000); 
 }
    window.onload = () => showAlert('XX制作，仅用于合法用途，一切非法使用概不负责');
